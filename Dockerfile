@@ -13,3 +13,8 @@ RUN apt-get install -y -q git
 RUN git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-branch
 
 RUN useradd -ms /bin/bash odoo
+
+ADD odoo-server /etc/init.d/
+ADD openerp-server.conf /etc/
+ADD odoo-start.sh .
+ADD odoo-user.sh .
