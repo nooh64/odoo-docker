@@ -15,6 +15,9 @@ RUN git clone https://www.github.com/odoo/odoo --depth 1 --branch 8.0 --single-b
 RUN useradd -ms /bin/bash odoo
 
 ADD odoo-server /etc/init.d/
+RUN sudo chmod 755 /etc/init.d/odoo-server
 ADD openerp-server.conf /etc/
 ADD odoo-start.sh .
+RUN sudo chmod 755 odoo-start.sh
 ADD odoo-user.sh .
+RUN sudo chmod 755 odoo-user.sh
